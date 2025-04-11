@@ -1,5 +1,6 @@
 import cv2 #import the respect opencv package
 import mediapipe as  mp # this is respect to detect face
+import pyautogui #this used to control system UI
 
 cam = cv2.VideoCapture(0) # declare cam used to capture video
 face_mesh = mp.solutions.face_mesh.FaceMesh(refine_landmarks=True)
