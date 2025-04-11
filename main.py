@@ -5,6 +5,7 @@ cam = cv2.VideoCapture(0) # declare cam used to capture video
 face_mesh = mp.solutions.face_mesh.FaceMesh(refine_landmarks=True)
 while True:
     _,frame = cam.read()
+    frame = cv2.flip(frame,1)
     rgp_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     output = face_mesh.process(rgp_frame)
 
