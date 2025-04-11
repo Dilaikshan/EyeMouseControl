@@ -8,11 +8,12 @@ while True:
     rgp_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     output = face_mesh.process(rgp_frame)
     landmark_points = output.multi_face_landmarks
+    frame_h, frame_w = frame.shape
     if landmark_points:
         landmarks = landmark_points[0].landmark
         for landmark in landmarks:
-            x = landmark.x
-            y = landmark.y
+            x = landmark.x * frame_w
+            y = landmark.y * frame_h
             print(x, y)
     cv2.imshow('Eye control mouse', frame)
     cv2.waitKey(1)
