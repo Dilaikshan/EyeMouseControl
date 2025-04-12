@@ -15,10 +15,11 @@ while True:
 
     if landmark_points:
         landmarks = landmark_points[0].landmark
-        for landmark in landmarks[474:478]:
+        for id, landmark in enumerate(landmarks[474:478]):
             x = int(landmark.x * frame_w)
             y = int(landmark.y * frame_h)
             cv2.circle(frame,(x,y),3,(0,255,0))
-            print(x, y)
+            if id == 1:
+                pyautogui.moveTo(x, y) 
     cv2.imshow('Eye control mouse', frame)
     cv2.waitKey(1)
