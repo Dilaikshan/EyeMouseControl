@@ -32,7 +32,7 @@ pip install opencv-python mediapipe pyautogui
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/eye-controlled-mouse.git
+   git clone https://github.com/Dilaikshan/eye-controlled-mouse.git
    ```
 2. Navigate to the project directory:
 
