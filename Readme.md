@@ -8,8 +8,8 @@ Control your computer mouse using just your eyes! This project demonstrates how 
 
 | Version                                                           | Features |
 |-------------------------------------------------------------------|----------|
-| [Version 1](https://github.com/Dilaikshan/yourrepo/tree/version1) | Eye tracking + left-eye blink to click |
-| [Version 2](https://github.com/Dilaikshan/yourrepo/tree/version2) | Calibration + smoother control + dwell-clicking |
+| [Version 1](https://github.com/Dilaikshan/EyeMouseControl/tree/version1) | Eye tracking + left-eye blink to click |
+| [Version 2](https://github.com/Dilaikshan/EyeMouseControl/tree/version2) | Calibration + smoother control + dwell-clicking |
 
 ---
 
@@ -42,8 +42,8 @@ Control your computer mouse using just your eyes! This project demonstrates how 
 ## 🙋‍♂️ Author
 
 **Dilaikshan**  
-Feel free to connect with me on [LinkedIn](https://linkedin.com/in/yourprofile)  
-📧 Email: your@email.com
+Feel free to connect with me on [LinkedIn](www.linkedin.com/in/dilaikshan-mja)  
+📧 Email: dilaikshan1445@gmail.com
 
 ---
 
