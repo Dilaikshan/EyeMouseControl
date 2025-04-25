@@ -98,7 +98,7 @@ Version2/
 ## 🙌 Author
 
 **Dilaikshan**  
-If you're interested in eye tracking, assistive tech, or computer vision, feel free to connect with me on [LinkedIn](https://linkedin.com)!
+If you're interested in eye tracking, assistive tech, or computer vision, feel free to connect with me on [LinkedIn](www.linkedin.com/in/dilaikshan-mja)!
 
 ---
 
