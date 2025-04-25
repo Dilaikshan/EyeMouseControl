@@ -96,7 +96,7 @@ Check out [Version 2](../Version2/README.md) — it includes:
 ## 🙌 Author
 
 **Dilaikshan**  
-Feel free to connect with me on [LinkedIn](https://linkedin.com) and check out the improved version in this repo!
+Feel free to connect with me on [LinkedIn](www.linkedin.com/in/dilaikshan-mja) and check out the improved version in this repo!
 
 ---
 
