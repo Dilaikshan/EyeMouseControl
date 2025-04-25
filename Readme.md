@@ -1,99 +1,104 @@
-# Eye-Controlled Mouse
+# 👁️ Eye Controlled Mouse - Version 2 (Improved)
 
-This project implements an eye-controlled mouse using computer vision techniques. By tracking eye movements and blinks through a webcam, the system moves the mouse cursor accordingly and performs click operations when a blink is detected.
+This is an improved version of the eye-controlled mouse system built using Python, OpenCV, and MediaPipe. It adds calibration, cursor smoothing, and dwell-based clicking for a smoother and more reliable experience.
 
-## Features
+---
 
-- **Eye Tracking**: Moves the mouse cursor based on the position of the user's eye.
-- **Blink Detection**: Performs a mouse click when the user blinks.
-- **Real-Time Processing**: Uses webcam input for continuous tracking.
+## 🚀 Improvements Over Version 1
 
-## Prerequisites
+- ✅ **Calibration Phase**: Guides the user to look around the screen edges before tracking begins
+- ✅ **Smooth Cursor Movement**: Uses sigmoid-based non-linear scaling and a moving average buffer
+- ✅ **Dwell-Based Clicking**: Triggers a click if the cursor remains at the same position for 1.5 seconds
+- ✅ **Toggle Controls**: Easily enable or disable tracking and clicking with keyboard shortcuts
 
-To run this project, you need to install the following Python libraries:
+---
 
-- `opencv-python` (for webcam capture and image processing)
-- `mediapipe` (for face and eye landmark detection)
-- `pyautogui` (for controlling the mouse cursor)
+## ⚙️ How It Works
 
-You can install these dependencies using pip:
+1. **Calibration**: The system records eye positions as the user looks around, defining the bounds for accurate mapping.
+2. **Mapping**: Eye coordinates are normalized and mapped using a sigmoid function for more natural control.
+3. **Cursor Smoothing**: Uses a buffer of recent cursor positions to reduce jitter.
+4. **Dwell Click**: If the eye gaze stays near one point for more than 1.5 seconds, a click is automatically performed.
+
+---
+
+## 🖼️ Screenshot / Demo
+
+> (Add a short demo video or GIF showing calibration and smooth control)
+
+---
+
+## 🧰 Requirements
 
 ```bash
-pip install opencv-python mediapipe pyautogui
+pip install opencv-python mediapipe pyautogui numpy scipy
 ```
 
-## Hardware Requirements
+---
 
-- A webcam (built-in or external) for capturing video input.
-- A computer running Windows, macOS, or Linux.
+## ▶️ How to Run
 
-## Usage
+```bash
+python version2.py
+```
 
-1. Clone this repository to your local machine:
+---
 
-   ```bash
-   git clone https://github.com/Dilaikshan/eye-controlled-mouse.git
-   ```
-2. Navigate to the project directory:
+## ⌨️ Keyboard Shortcuts
 
-   ```bash
-   cd eye-controlled-mouse
-   ```
-3. Run the Python script:
+| Key | Function              |
+|-----|-----------------------|
+| `q` | Quit                  |
+| `t` | Toggle Eye Tracking   |
+| `c` | Toggle Dwell Clicking |
+| `r` | Recalibrate           |
 
-   ```bash
-   python eye_controlled_mouse.py
-   ```
-4. The webcam will open, and the mouse cursor will start following your eye movements.
-5. Blink to perform a mouse click.
+---
 
-## How It Works
+## 📂 File Structure
 
-- **Webcam Input**: The script uses OpenCV to capture video from the default webcam.
-- **Face and Eye Detection**: MediaPipe's FaceMesh model detects facial landmarks, focusing on the eyes.
-- **Mouse Control**:
-  - The position of the right eye (landmarks 474-477) is mapped to the screen coordinates to move the mouse cursor using PyAutoGUI.
-  - A blink is detected by measuring the vertical distance between specific eye landmarks (145 and 159). If the distance is below a threshold, a click is triggered.
-- **Visualization**: Green circles are drawn on the eye landmarks for visual feedback, displayed in a window.
+```
+Version2/
+│
+├── version2.py      # Improved version with calibration and smoothing
+├── README.md        # This file
+```
 
-## Code Structure
+---
 
-- `eye_controlled_mouse.py`: The main script containing the eye-tracking and mouse control logic.
-- Key components:
-  - Webcam initialization with OpenCV.
-  - FaceMesh setup with MediaPipe for landmark detection.
-  - Mouse movement and click logic using PyAutoGUI.
+## 📊 Performance
 
-## Limitations
+- Cursor movement is more accurate and less jittery
+- Dwell-clicking reduces false clicks from normal blinks
+- Calibrated control makes it easier to access all screen regions without exaggerated head movement
 
-- **Lighting Conditions**: Performance may vary under poor lighting or with reflective surfaces.
-- **Calibration**: The system assumes a standard webcam resolution and may require tuning for different setups.
-- **Blink Sensitivity**: The blink detection threshold (0.006) may need adjustment for different users or environments.
-- **Single User**: The system tracks only one face at a time.
+---
 
-## Future Improvements
+## 📊 Compare With Version 1
 
-- Add calibration for different screen sizes and webcam resolutions.
-- Improve blink detection robustness with machine learning models.
-- Support multiple click types (e.g., double-click, right-click) using different eye gestures.
-- Optimize performance for lower-end hardware.
+| Feature             | Version 1 | Version 2 |
+|---------------------|-----------|-----------|
+| Eye Tracking        | ✅         | ✅         |
+| Blink to Click      | ✅         | ❌ (uses dwell) |
+| Calibration         | ❌         | ✅         |
+| Cursor Smoothing    | ❌         | ✅         |
+| Toggle Control      | ❌         | ✅         |
 
-## Troubleshooting
+---
 
-- **Webcam Not Detected**: Ensure your webcam is connected and accessible. Try changing the camera index in `cv2.VideoCapture(0)`.
-- **Dependencies Issues**: Verify that all required libraries are installed correctly.
-- **Mouse Not Moving**: Ensure the webcam captures your face clearly and that lighting conditions are adequate.
+## 📸 Credits
 
-## Contributing
+- [MediaPipe](https://github.com/google/mediapipe) by Google
+- [OpenCV](https://opencv.org/)
+- [PyAutoGUI](https://pyautogui.readthedocs.io/)
+- [SciPy](https://scipy.org/) and [NumPy](https://numpy.org/) for math and signal smoothing
 
-Contributions are welcome! Feel free to open issues or submit pull requests for bug fixes, optimizations, or new features.
+---
 
-## License
+## 🙌 Author
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+**Dilaikshan**  
+If you're interested in eye tracking, assistive tech, or computer vision, feel free to connect with me on [LinkedIn](https://linkedin.com)!
 
-## Acknowledgments
+---
 
-- OpenCV for computer vision utilities.
-- MediaPipe for face landmark detection.
-- PyAutoGUI for mouse control.
